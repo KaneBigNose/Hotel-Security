@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-Hotel_Security.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Hotel-Security\Hotel_Security\Intermediate\Build\Win64\x64\Hotel_SecurityEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"D:\Hotel-Security\Hotel_Security\Intermediate\Build\Win64\x64\UnrealEditor\Development\Hotel_Security\Hotel_Security.init.gen.cpp.obj"
+"D:\Hotel-Security\Hotel_Security\Intermediate\Build\Win64\x64\UnrealEditor\Development\Hotel_Security\Hotel_SecurityCharacter.gen.cpp.obj"
+"D:\Hotel-Security\Hotel_Security\Intermediate\Build\Win64\x64\UnrealEditor\Development\Hotel_Security\Hotel_SecurityGameMode.gen.cpp.obj"
+"D:\Hotel-Security\Hotel_Security\Intermediate\Build\Win64\x64\UnrealEditor\Development\Hotel_Security\Hotel_Security.cpp.obj"
+"D:\Hotel-Security\Hotel_Security\Intermediate\Build\Win64\x64\UnrealEditor\Development\Hotel_Security\Hotel_SecurityCharacter.cpp.obj"
+"D:\Hotel-Security\Hotel_Security\Intermediate\Build\Win64\x64\UnrealEditor\Development\Hotel_Security\Hotel_SecurityGameMode.cpp.obj"
+"D:\Hotel-Security\Hotel_Security\Intermediate\Build\Win64\x64\UnrealEditor\Development\Hotel_Security\Default.rc2.res"
+/OUT:"D:\Hotel-Security\Hotel_Security\Intermediate\Build\Win64\x64\UnrealEditor\Development\Hotel_Security\UnrealEditor-Hotel_Security.lib"

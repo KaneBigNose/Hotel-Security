@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\hotel-security\\hotel_security\\source\\hotel_security\\hotel_security.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\hotel-security\\hotel_security\\intermediate\\build\\win64\\x64\\hotel_securityeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\hotel-security\\hotel_security\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\hotel_security\\definitions.hotel_security.h",
+            "d:\\hotel-security\\hotel_security\\source\\hotel_security\\hotel_security.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

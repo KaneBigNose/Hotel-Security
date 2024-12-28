@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Hotel_Security.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Hotel_Security.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Hotel_SecurityEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Hotel_Security">
+      <UniqueIdentifier>{FD2D2F0C-DA54-3431-8777-AFEE42E245AC}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Hotel_Security\Hotel_Security.Build.cs">
+      <Filter>Source\Hotel_Security</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Hotel_Security\Hotel_Security.cpp">
+      <Filter>Source\Hotel_Security</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Hotel_Security\Hotel_Security.h">
+      <Filter>Source\Hotel_Security</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Hotel_Security\Hotel_SecurityCharacter.cpp">
+      <Filter>Source\Hotel_Security</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Hotel_Security\Hotel_SecurityCharacter.h">
+      <Filter>Source\Hotel_Security</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Hotel_Security\Hotel_SecurityGameMode.cpp">
+      <Filter>Source\Hotel_Security</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Hotel_Security\Hotel_SecurityGameMode.h">
+      <Filter>Source\Hotel_Security</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

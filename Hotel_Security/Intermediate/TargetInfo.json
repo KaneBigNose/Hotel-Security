@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Hotel_Security",
+			"Path": "..\\Source\\Hotel_Security.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "Hotel_SecurityEditor",
+			"Path": "..\\Source\\Hotel_SecurityEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
