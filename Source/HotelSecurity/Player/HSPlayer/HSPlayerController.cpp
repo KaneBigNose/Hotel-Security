@@ -7,11 +7,12 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "GAS/HSPlayerGameplayTags.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
 
 AHSPlayerController::AHSPlayerController()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 void AHSPlayerController::BeginPlay()
@@ -57,6 +58,8 @@ void AHSPlayerController::SetupInputComponent()
 		EnhancedInputComponent->BindAction(IAFlash, ETriggerEvent::Started, this, &ThisClass::FlashStarted);
 
 		EnhancedInputComponent->BindAction(IAZoom, ETriggerEvent::Triggered, this, &ThisClass::ZoomTriggered);
+		EnhancedInputComponent->BindAction(IAZoom, ETriggerEvent::Completed, this, &ThisClass::ZoomReleased);
+		EnhancedInputComponent->BindAction(IAZoom, ETriggerEvent::Canceled, this, &ThisClass::ZoomReleased);
 
 		EnhancedInputComponent->BindAction(IAReport, ETriggerEvent::Started, this, &ThisClass::ReportStarted);
 
@@ -66,7 +69,8 @@ void AHSPlayerController::SetupInputComponent()
 
 void AHSPlayerController::MoveTriggered(const FInputActionValue& InputValue)
 {
-	if (!HSPlayer)
+	if (HSPlayer->GetHSPlayerStateContainer().HasTag(HSPlayerGameplayTags::HSPlayer_State_SitDown) ||
+		HSPlayer->GetHSPlayerStateContainer().HasTag(HSPlayerGameplayTags::HSPlayer_State_Zoom))
 	{
 		return;
 	}
@@ -97,7 +101,8 @@ void AHSPlayerController::MoveReleased(const FInputActionValue& InputValue)
 
 void AHSPlayerController::LookTriggered(const FInputActionValue& InputValue)
 {
-	if (!HSPlayer)
+	if (HSPlayer->GetHSPlayerStateContainer().HasTag(HSPlayerGameplayTags::HSPlayer_State_SitDown) ||
+		HSPlayer->GetHSPlayerStateContainer().HasTag(HSPlayerGameplayTags::HSPlayer_State_Zoom))
 	{
 		return;
 	}
@@ -151,7 +156,18 @@ void AHSPlayerController::FlashStarted(const FInputActionValue& InputValue)
 
 void AHSPlayerController::ZoomTriggered(const FInputActionValue& InputValue)
 {
+	HSPlayer->GetHSPlayerStateContainer().AddTag(HSPlayerGameplayTags::HSPlayer_State_Zoom);
+	
+	HSPlayer->GetCameraComponent()->SetActive(false);
+	HSPlayer->GetZoomCameraComponent()->SetActive(true);
+}
 
+void AHSPlayerController::ZoomReleased(const FInputActionValue& InputValue)
+{
+	HSPlayer->GetHSPlayerStateContainer().RemoveTag(HSPlayerGameplayTags::HSPlayer_State_Zoom);
+
+	HSPlayer->GetCameraComponent()->SetActive(true);
+	HSPlayer->GetZoomCameraComponent()->SetActive(false);
 }
 
 void AHSPlayerController::ReportStarted(const FInputActionValue& InputValue)

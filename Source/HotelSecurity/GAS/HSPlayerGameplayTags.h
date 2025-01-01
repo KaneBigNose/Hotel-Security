@@ -10,5 +10,6 @@ namespace HSPlayerGameplayTags
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(HSPlayer_State_Sprint);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(HSPlayer_State_Interact);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(HSPlayer_State_SitDown);
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(HSPlayer_State_Zoom);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(HSPlayer_State_Die);
 }

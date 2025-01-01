@@ -29,6 +29,12 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class AHSPlayer* HSPlayer;
 
+	FVector CameraCurrentLocation = FVector(0, 30, 45);
+	FRotator CameraCurrentRotation = FRotator(0, 0, 0);
+
+	FVector CameraZoomLocation = FVector(300, 30, 45);
+	FRotator CameraZoomRotation = FRotator(0, 0, 0);
+
 #pragma region Input
 
 protected:
@@ -48,6 +54,7 @@ protected:
 	void FlashStarted(const FInputActionValue& InputValue);
 
 	void ZoomTriggered(const FInputActionValue& InputValue);
+	void ZoomReleased(const FInputActionValue& InputValue);
 
 	void ReportStarted(const FInputActionValue& InputValue);
 

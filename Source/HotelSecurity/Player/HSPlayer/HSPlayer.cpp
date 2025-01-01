@@ -16,12 +16,20 @@ AHSPlayer::AHSPlayer()
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArm->SetupAttachment(RootComponent);
 	SpringArm->TargetArmLength = 150.0f;
-	SpringArm->SetRelativeLocation(FVector(0, 30, 45));
 	SpringArm->bUsePawnControlRotation = true;
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(SpringArm);
+	Camera->SetRelativeLocation(FVector(0, 30, 45));
 	Camera->bUsePawnControlRotation = true;
+
+	ZoomSpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("ZoomSpringArm"));
+	ZoomSpringArm->SetupAttachment(RootComponent);
+	ZoomSpringArm->TargetArmLength = 150.0f;
+
+	ZoomCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("ZoomCamera"));
+	ZoomCamera->SetupAttachment(ZoomSpringArm);
+	ZoomCamera->SetRelativeLocation(FVector(300, 30, 45));
 
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = false;
@@ -38,6 +46,10 @@ void AHSPlayer::BeginPlay()
 	Super::BeginPlay();
 	
 	HSPlayerController = Cast<AHSPlayerController>(GetController());
+
+	Camera->SetActive(true);
+
+	ZoomCamera->SetActive(false);
 }
 
 void AHSPlayer::Tick(float DeltaTime)
